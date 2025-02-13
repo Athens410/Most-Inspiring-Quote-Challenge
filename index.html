@@ -125,7 +125,21 @@ Rewrite Your Own Ending ✍️
 </div>
 <script>
 
-    
+    function submitResponse() {
+            let userText = document.getElementById('textInput').value; // Fixed ID reference
+            if (userText.trim() !== "") {
+                let responseBox = document.createElement("div");
+                responseBox.classList.add("response-box");
+                responseBox.textContent = userText;
+                document.getElementById("responses").appendChild(responseBox);
+
+                document.getElementById('resultText').innerHTML = "Your response has been added!";
+                document.getElementById('textInput').value = ""; // Clear input
+            } else {
+                document.getElementById('resultText').innerHTML = "Please enter your response!";
+            }
+        }
+
 </script>
 </body>
 </html>
